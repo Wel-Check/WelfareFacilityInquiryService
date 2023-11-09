@@ -4,13 +4,15 @@ import {
   NavContainer,
   Logo,
 } from "./NavbarStyle";
+import logo from "../../assets/icons/logo.png";
 
 const Navbar = () => {
   return (
     <NavContainer>
       <ul>
         <li>
-          <Logo to="/">LOGO</Logo>
+          <Logo to="/">
+          </Logo>
         </li>
         <li>
             <Link to="/facility/거주시설">거주시설</Link>
