@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   NavContainer,
   Logo,
@@ -17,16 +18,16 @@ const Navbar = () => {
     <NavContainer>
       <ul>
         <li>
-          <Logo onClick={() => menuClickHandler("LOGO")}>LOGO</Logo>
+          <Logo to="/" onClick={() => menuClickHandler("LOGO")}>LOGO</Logo>
         </li>
         <li>
           <Dropdown>
             <a onClick={() => menuClickHandler("장애인")}>장애인</a>
             <DropdownMenu>
-              <DropdownItem href="#">외부신체기능장애</DropdownItem>
-              <DropdownItem href="#">발달장애</DropdownItem>
-              <DropdownItem href="#">내부기관장애</DropdownItem>
-              <DropdownItem href="#">정신장애</DropdownItem>
+              <DropdownItem as={Link} to="/facility/외부신체기능장애">외부신체기능장애</DropdownItem>
+              <DropdownItem as={Link} to="/facility/발달장애">발달장애</DropdownItem>
+              <DropdownItem as={Link} to="/facility/내부기관장애">내부기관장애</DropdownItem>
+              <DropdownItem as={Link} to="/facility/정신장애">정신장애</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </li>
@@ -34,8 +35,8 @@ const Navbar = () => {
           <Dropdown>
             <a onClick={() => menuClickHandler("노인")}>노인</a>
             <DropdownMenu>
-              <DropdownItem href="#">노인복지시설</DropdownItem>
-              <DropdownItem href="#">요양/시설</DropdownItem>
+              <DropdownItem as={Link} to="/facility/노인복지시설">노인복지시설</DropdownItem>
+              <DropdownItem as={Link} to="/facility/요양/시설">요양/시설</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </li>
@@ -43,8 +44,8 @@ const Navbar = () => {
         <Dropdown>
             <a onClick={() => menuClickHandler("아동/청소년")}>아동/청소년</a>
             <DropdownMenu>
-              <DropdownItem href="#">아동</DropdownItem>
-              <DropdownItem href="#">청소년</DropdownItem>
+              <DropdownItem as={Link} to="/facility/아동">아동</DropdownItem>
+              <DropdownItem as={Link} to="/facility/청소년">청소년</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </li>
