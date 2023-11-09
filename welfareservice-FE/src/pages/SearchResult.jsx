@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "../components/Navbar/Navbar";
 import ListHeader from "../components/FacilityList/ListHeader";
@@ -25,30 +25,23 @@ export const PageBtn = styled.button`
   }
 `;
 
-const FacilityList = () => {
-  const { facilityType } = useParams();
-  const [data, setData] = useState([]);
+const SearchResult = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
-
+  
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const searchItem = queryParams.get("search");
+  const searchTerm = queryParams.get('search');
+
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     setData(
       listdata.filter((item) => {
-        if (facilityType === "기타시설") {
-          return (
-            !item.facility_type.includes("거주시설") &&
-            !item.facility_type.includes("재활시설") &&
-            !item.facility_type.includes("보호")
-          );
-        }
-        return item.facility_type.includes(facilityType);
+        return item.facility_name.includes(searchTerm);
       })
     );
-  }, [facilityType]);
+  }, [searchTerm]);
 
   return (
     <>
@@ -72,4 +65,4 @@ const FacilityList = () => {
   );
 };
 
-export default FacilityList;
+export default SearchResult;

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import iconSearch from "../../assets/icons/icon-search.svg";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -29,11 +30,29 @@ const Icon = styled.img`
   width: 100%;
 `;
 
-const Search = () => {
+const Search = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  }
+
+  const handleSearchClick = () => {
+    console.log(searchTerm)
+    // onSearch(searchTerm);
+    navigate(`/searchResult?search=${searchTerm}`);
+  }
+
   return (
     <Wrapper>
-      <Input type="text" placeholder="시설명을 입력해주세요" />
-      <Button>
+      <Input
+        type="text"
+        placeholder="시설명을 입력해주세요"
+        value={searchTerm}
+        onChange={handleInputChange} 
+      />
+      <Button onClick={handleSearchClick}>
         <Icon src={iconSearch} alt="검색 아이콘" /> 
       </Button>
     </Wrapper>
