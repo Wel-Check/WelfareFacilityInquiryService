@@ -32,7 +32,7 @@ const Icon = styled.img`
 const Search = () => {
   return (
     <Wrapper>
-      <Input type="text" placeholder="검색어를 입력해주세요" />
+      <Input type="text" placeholder="시설명을 입력해주세요" />
       <Button>
         <Icon src={iconSearch} alt="검색 아이콘" /> 
       </Button>

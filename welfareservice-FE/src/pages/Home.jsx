@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components"
 import Navbar from "../components/Navbar/Navbar";
 import Search from "../components/Search/Search";
@@ -8,11 +8,17 @@ export const SearchContainer = styled.div`
 `;
 
 const Home = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
   return (
     <>
       <Navbar />
       <SearchContainer>
-        <Search />
+        <Search onSearch={handleSearch} />
       </SearchContainer>
     </>
   );

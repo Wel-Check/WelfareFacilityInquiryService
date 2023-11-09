@@ -9,7 +9,7 @@ export default function Router() {
     <RouterProvider>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/facility/:title" element={<FacilityList />} />
+        <Route path="/facility/:facilityType" element={<FacilityList />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
     </RouterProvider>

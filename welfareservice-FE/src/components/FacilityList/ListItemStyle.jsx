@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 70px;
+  height: 50px;
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -13,21 +13,21 @@ export const Wrapper = styled.div`
 `;
 
 export const FacilityName = styled.span`
-  width: 20%;
-  margin-left: 10px;
+  width: 25%;
+  margin-left: 40px;
 `;
 
 export const FacilityType = styled.span`
-  width: 20%;
+  width: 25%;
   margin-left: 5px;
 `;
 
 export const FacilityNumber = styled.span`
-  width: 20%;
+  width: 15%;
   margin-left: 5px;
 `;
 
 export const FacilityAddress = styled.span`
-  width: 40%;
+  width: 45%;
   margin-left: 5px;
 `;
