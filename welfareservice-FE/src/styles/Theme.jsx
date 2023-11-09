@@ -10,8 +10,8 @@ export const colors = {
 };
 
 export const fontSize = {
-  xlarge: "2rem", // 32px
-  large: "1.25rem", // 20px
+  xlarge: "1.625rem", // 26px
+  large: "1.125rem", // 18px
   medium: "1rem", // 16px
   small: "0.75rem", // 12px
 };
