@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Search from "../components/Search/Search";
 
 export const SearchContainer = styled.div`
-  margin-top: 40%;
+  margin-top: 300px;
 `;
 
 const Home = () => {
