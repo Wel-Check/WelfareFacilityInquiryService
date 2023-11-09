@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const NavContainer = styled.nav`
   top: 0;
@@ -25,7 +26,7 @@ export const NavContainer = styled.nav`
   }
 `;
 
-export const Logo = styled.a.attrs({
+export const Logo = styled(Link).attrs({
   className: "logo",
 })`
   padding: 9px 13px 5px 13px;
